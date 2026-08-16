@@ -1,0 +1,211 @@
+/* --- UI Color Design tokens matched from your exact homepage styling --- */
+:root {
+    --bg-color: #0f172a;       /* Deep Slate */
+    --card-bg: #1e293b;        /* Mid Slate Card */
+    --text-color: #f1f5f9;     /* High-Contrast Light Slate */
+    --accent-blue: #38bdf8;    /* Your vibrant blue */
+    --accent-hover: #0ea5e9;
+    --border-color: #334155;
+    
+    /* Feedback variants */
+    --success-color: #10b981;
+    --error-color: #ef4444;
+}
+
+/* Optional Challenge: Light Mode implementation mapping */
+[data-theme="light"] {
+    --bg-color: #f8fafc;
+    --card-bg: #ffffff;
+    --text-color: #0f172a;
+    --accent-blue: #0ea5e9;
+    --accent-hover: #0284c7;
+    --border-color: #cbd5e1;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* --- Header System --- */
+header {
+    background-color: var(--card-bg);
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+header h1 {
+    font-size: 1.5rem;
+    color: var(--accent-blue);
+    font-weight: 700;
+}
+
+.btn-toggle {
+    background: transparent;
+    border: 1px solid var(--accent-blue);
+    color: var(--text-color);
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.2s ease;
+}
+
+.btn-toggle:hover {
+    background-color: var(--accent-blue);
+    color: #0f172a;
+}
+
+/* --- Hero Section --- */
+.hero {
+    padding: 3rem 1.5rem;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+    background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.95));
+}
+
+.hero h2 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    color: #94a3b8;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* --- Main Structure & Layout --- */
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+.quiz-box {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+    transition: background-color 0.3s ease, border 0.3s ease;
+}
+
+/* --- Interactive Elements & Buttons --- */
+#question-text {
+    font-size: 1.3rem;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+}
+
+.btn-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.answer-btn {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    padding: 1rem;
+    border-radius: 0.375rem;
+    text-align: left;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.answer-btn:hover:not(:disabled) {
+    border-color: var(--accent-blue);
+    background-color: var(--border-color);
+}
+
+/* Interactivity Classes (Rubric Event Requirements) */
+.correct {
+    background-color: var(--success-color) !important;
+    border-color: var(--success-color) !important;
+    color: white !important;
+}
+
+.wrong {
+    background-color: var(--error-color) !important;
+    border-color: var(--error-color) !important;
+    color: white !important;
+}
+
+/* --- Main CTAs --- */
+.cta-btn {
+    display: inline-block;
+    background-color: var(--accent-blue);
+    color: #0f172a;
+    padding: 0.75rem 1.5rem;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    border-radius: 0.375rem;
+    font-family: 'Inter', sans-serif;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    box-shadow: 0 4px 14px rgba(56, 189, 248, 0.2);
+}
+
+.cta-btn:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
+}
+
+/* Progress bar functionality */
+.progress-bar-container {
+    width: 100%;
+    background-color: var(--border-color);
+    height: 6px;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+#progress-bar {
+    width: 0%;
+    height: 100%;
+    background-color: var(--accent-blue);
+    transition: width 0.3s ease;
+}
+
+/* --- Structural Control Classes --- */
+.controls {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.hide { display: none !important; }
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    margin-top: 4rem;
+    border-top: 1px solid var(--border-color);
+    color: #64748b;
+    font-size: 0.9rem;
+}
